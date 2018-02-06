@@ -22,7 +22,7 @@ if [ $(vboxmanage -v | grep vboxconfig | wc -l) -gt 0 ];then
   echo ---------------------------------------------------
 fi
 if [ $(vboxmanage -v | grep vboxconfig | wc -l) -eq 0 ];then
-	wget $url -O /tmp/$file
+	wget $url1 -O /tmp/$file
 	if [ $? -eq 0 ];then
 		sudo VBoxManage extpack uninstall "Oracle VM VirtualBox Extension Pack"
 		yes | sudo VBoxManage extpack install /tmp/$file --replace
